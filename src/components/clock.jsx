@@ -3,7 +3,7 @@ import { useState } from "react"
 import '../assets/css/index.css'
 
 const Clock = ()=>{
-  const [time , setTime] = useState(new Date())
+  const [times , setTime] = useState(new Date())
 
   useEffect(()=>{
        const actual = setInterval(()=>{
@@ -18,7 +18,7 @@ const Clock = ()=>{
   return(
 <>
 
-<h4 id="p">this is the current time : {time.toLocaleTimeString()}</h4>
+<h4 id="p">this is the current time : {times.toLocaleTimeString()}</h4>
 </>
   )
 
