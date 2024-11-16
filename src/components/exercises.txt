@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+Create a DynamicForm component that accepts a fields prop (an array of objects).
+ Each object contains the field type (text, email, number, etc.),
+  placeholder, and name. The form should render inputs dynamically
+   based on the fields array.
+
+The component should also accept
+ a onSubmit prop that receives the form 
+ data as an object when the form is submitted.
+
+ try using react !!!!!!!!!!!
