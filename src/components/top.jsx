@@ -1,4 +1,5 @@
-import Field from './components/field'
+import react from 'react'
+import Field from './field';
 const Appp =  ()=>{
   const dataset = [
     { type: 'text', name: 'username' , placeholder: 'Username' },
@@ -12,7 +13,7 @@ const Appp =  ()=>{
       <>
 
       <div> 
-        <form action="">
+        <form action="" style={{background:'black',}}>
         {dataset.map((data , index)=>{
         return (
           <div key={index}>

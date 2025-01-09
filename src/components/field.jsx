@@ -1,3 +1,4 @@
+import react from 'react'
 const Field = ({type , name , placeholder})=>{
 return(
 <>
