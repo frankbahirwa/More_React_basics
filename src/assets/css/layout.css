@@ -1,0 +1,26 @@
+.input{
+padding-top:1cm; 
+
+background: whitesmoke;
+height: 2.5cm;
+border-radius: 0.5cm ;
+border:10px solid ;
+
+}
+
+.output{
+text-align: center;
+padding-bottom: 2cm;
+height: 5%;
+border:5px solid;
+border-radius: 0.5cm ;
+background: black;
+}
+li{
+padding-top: 0.3cm;
+
+}
+.task{
+height: 40%;
+background: whitesmoke;
+}
