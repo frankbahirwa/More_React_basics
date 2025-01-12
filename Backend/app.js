@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Home Page!');
 });
 
-// Route to render the EJS template
+// Route to render the EJS template 
 app.get('/refe', (req, res) => {
     res.render('index');
 });
@@ -53,7 +53,7 @@ app.listen(PORT, () => {
 const express= require('express');
 const mongoose=require('mongoose');
 const app=express();
-const PORT=5000;
+const PORT=3000;
 //connect to mongodb
 mongoose
 .connect('mongodb://localhost:27017/')
@@ -66,9 +66,13 @@ app.set('view engine', 'ejs');
 //Route for the root path
 
 app.get('/', (req, res) =>{
+res.send('welcome to the home page');
 
-
-})
+});
+//Route to render the Ejs tempolete
+app.get('/refe', (req, res) =>{
+res.render('index');
+});
 
 
 app.listen(PORT,() =>{

@@ -1,13 +1,32 @@
-import React, { useState } from "react";
-import '../assets/css/layout.css'
+import React, { useState, useEffect } from "react";
+import '../assets/css/layout.css';
 
 function TaskManager() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const savedTasks = localStorage.getItem("tasks");
+        return savedTasks ? JSON.parse(savedTasks) : [];
+      } catch (error) {
+        console.error("Error loading tasks:", error);
+        return [];
+      }
+    }
+    return [];
+  });
   const [input, setInput] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
 
-  const handleTask = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }, [tasks]);
+
+  const handleTask = (e) => {
+    e.preventDefault();
     if (!input) return;
+
     if (editingIndex !== null) {
       tasks[editingIndex] = input;
       setEditingIndex(null);
@@ -21,41 +40,39 @@ function TaskManager() {
   const deleteTask = (index) => setTasks(tasks.filter((_, i) => i !== index));
 
   return (
-   
-    <>
+  <>
     <body>
       
-   
-    <div class="task">
-    <div class="input">
+    
+      <form onSubmit={handleTask}>
+      <div class="oll">
+      <div class="input">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={editingIndex !== null ? "Edit task..." : "Add a task..."}
+        />
+        <button type="submit">{editingIndex !== null ? "Update" : "Add"}</button>
+        </div> <br />
       
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder={editingIndex !== null ? "Edit task..." : "Add a task..."}
-      />
-      <button onClick={handleTask}>{editingIndex !== null ? "Update" : "Add"}</button>
-</div>
-<div class="output">
-      <ul><br />
+      
+      <div class="output">
+      <ul>
         {tasks.map((task, index) => (
           <li key={index}>
             {task}
             <button onClick={() => { setEditingIndex(index); setInput(task); }}>Edit</button>
             <button onClick={() => deleteTask(index)}>Delete</button>
-        </li>
-
-
-))}
+          </li>
+        ))}
       </ul>
-      </div>
-      </div>
-      </body>
-    </>
+    </div>
+    </div>
+    </form>
+    </body>
 
-  );
-
+    </>);
 }
 
 export default TaskManager;
