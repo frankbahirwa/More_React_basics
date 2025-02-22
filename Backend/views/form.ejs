@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            background-color: teal;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .main input{
+            height: 0.7cm;
+            width: 100%;
+            border-radius: 7px;
+            border: 0;
+            outline-color: orange;
+        }
+        input::placeholder{
+            padding-left: 10px;
+            color: orange;
+            text-transform: capitalize;
+        }
+        .main button{
+            border: 0;
+            color: orange;
+            padding: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 5cm;
+            margin: 10px;
+        
+        }
+        th{
+            padding: 5px;
+        }
+        td{
+            padding: 4px;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="main">
+
+    <form action="/register" method="post">
+        <p style="color: white;font-size: 20px;">User Registration</p> <br>
+        <input type="text" name="username" id="" placeholder="enter username"> <br><br>
+        <input type="email" name="email" id="" placeholder="enter email"><br><br>
+        <input type="password" name="password" id="" placeholder="enter password"><br><br>
+        <button type="submit">Register</button>
+       </form> 
+</div>
+
+</body>
+</html>

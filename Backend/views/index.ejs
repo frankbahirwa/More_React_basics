@@ -7,7 +7,13 @@
 </head>
 <body>
     <p style="color: honeydew; background-color: blue; padding: 10px;border-radius: 6px;">
-        hello world
+        hello <%= name %>
     </p>
+<% names.forEach(name => { %>
+ <p style="background-color: green;padding: 20px;border-radius: 10px; color: white;">
+
+    <%= name %>
+ </p>
+<% }) %>
 </body>
 </html>

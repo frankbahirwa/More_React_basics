@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            background-color: teal;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .main input{
+            height: 0.7cm;
+            width: 100%;
+            border-radius: 7px;
+            border: 0;
+            outline-color: orange;
+        }
+        input::placeholder{
+            padding-left: 10px;
+            color: orange;
+            text-transform: capitalize;
+        }
+        .main button{
+            border: 0;
+            color: orange;
+            padding: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 5cm;
+            margin: 10px;
+        
+        }
+        th{
+            padding: 5px;
+        }
+        td{
+            padding: 4px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+     <th>username</th>
+     <th>email</th>
+     <th>password</th>
+     <th>action</th>
+    </tr>
+   
+     <% users.forEach(user => { %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td><%= user.password %></td>
+      <td>
+        <a href="">update</a>
+        <a href="">delete</a>
+      </td>
+    </tr>
+     <% }) %>
+     <button style="background-color: green; color: white;padding: 5px;"><a href="/form" style="text-decoration: none;color: white;">Add new</a></button>
+    
+   </table>
+</body>
+</html>
