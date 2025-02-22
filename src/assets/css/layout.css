@@ -11,7 +11,7 @@ border:10px solid ;
 .output{
 text-align: center;
 padding-bottom: 2cm;
-height: 5%;
+height: 5;
 border:5px solid;
 border-radius: 0.5cm ;
 background: black;
@@ -23,4 +23,14 @@ padding-top: 0.3cm;
 .task{
 height: 40%;
 background: whitesmoke;
+}
+form{
+height: 90%;
+background: white;
+}
+body{
+background: black;
+}
+.oll{
+background: black;
 }
